@@ -1,5 +1,5 @@
 <template>
-  <div class="container" @mousemove="showModes">
+  <div class="container" @mousemove="mousemove">
     <div class="clock-wrap" v-if="timeParts">
       <div class="clock-wrap-group">
         <Digit :number="timeParts[0][0]" />
@@ -115,16 +115,27 @@ export default {
       }
     };
 
-    const showModes = () => {
+    let cursorTimeout = null;
+    const mousemove = () => {
+
       if (!showModesButton.value) {
         showModesButton.value = true;
         setTimeout(function () {
           showModesButton.value = false;
         }, 2000);
       }
+      
+      document.body.style.cursor = 'default';
+      clearTimeout(cursorTimeout);
+      cursorTimeout = setTimeout(() => {
+        if(fullScreen.value) {
+          document.body.style.cursor = 'none'
+        }
+      }, 2000);
+      
     };
 
-    return { timeParts, darkMode, showModes, showModesButton, fullScreen };
+    return { timeParts, darkMode, mousemove, showModesButton, fullScreen };
   },
 };
 </script>
