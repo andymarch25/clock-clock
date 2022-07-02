@@ -1,5 +1,6 @@
-### ClockClock Vue.js implementation
+### ClockClock Web implementation
 Inspired by [ClockClock](https://clockclock.com/) project  
+Vue.js is used as a framework 
 [[Demo]](https://andymarch25.github.io/clock-clock/)
 
 ![ClockClock screenshot](screenshot.png)
@@ -14,12 +15,16 @@ npm install
 npm run serve
 ```
 
-##### Compiles and minifies for production
+#### Update GitHub Pages (Demo)
+##### 1. Build
 ```
 npm run build
 ```
-
-##### Lints and fixes files
+##### 2. Commit changes
 ```
-npm run lint
+git add dist && git commit -m 'commit message'
+```
+##### 3. Push changes
+```
+git subtree push --prefix dist origin gh-pages
 ```
