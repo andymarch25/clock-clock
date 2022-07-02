@@ -19,10 +19,10 @@
   background-color: $white-bg;
   margin: $clock-margin;
   overflow: hidden;
-  box-shadow: inset 2px 2px 7px 0 rgba(0, 0, 0, 0.08),
-    inset -7px -7px 2px -11px rgba(255, 255, 255, 0.5),
-    -5px -5px 12px -11px rgba(242, 240, 246, 0.7),
-    4px 7px 22px 0px rgba(0, 0, 0, 0.02);
+  box-shadow: inset 2px 2px 4px 0 rgb(0 0 0 / 8%), 
+              inset -7px -7px 2px -8px hsl(0deg 0% 100% / 50%), 
+              -5px -5px 12px -10px rgb(242 240 246 / 70%), 
+              4px 7px 11px 0 rgb(0 0 0 / 2%);
 
   @media screen and (max-width: 820px) {
     width: $clock-size / 2;
@@ -42,7 +42,7 @@
     }
 
     .dark-mode & {
-      background: #4a5366;
+      background: #c9c9c9;
     }
   }
 
@@ -62,7 +62,6 @@
   transition: all 0.5s linear, opacity 0.2s, background-color 0s;
   will-change: transform;
   backface-visibility: hidden;
-  box-shadow: -5px 0 10px 0px rgba($arrow-color, 0.2);
   border-radius: 10px 0 0 10px;
   z-index: 1;
 
@@ -71,7 +70,7 @@
   }
 
   .dark-mode & {
-    background: #4a5366;
+    background: #c9c9c9;
     box-shadow: unset;
   }
 }
