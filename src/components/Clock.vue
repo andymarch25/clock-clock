@@ -25,9 +25,9 @@
               4px 7px 11px 0 rgb(0 0 0 / 2%);
 
   @media screen and (max-width: 820px) {
-    width: $clock-size / 2;
-    height: $clock-size / 2;
-    margin: $clock-margin / 2;
+    width: calc($clock-size / 2);
+    height: calc($clock-size / 2);
+    margin: calc($clock-margin / 2);
   }
 
   &::after {
@@ -53,20 +53,19 @@
 }
 
 .arrow {
-  width: calc(50% - 6px);
+  width: calc(50% - 2px);
   height: $arrow-height;
   background: $arrow-color;
   position: absolute;
   transform: translateX(-50%);
   transform-origin: right center;
-  transition: all 0.5s linear, opacity 0.2s, background-color 0s;
+  transition: all 0.7s linear, opacity 0.2s, background-color 0s;
   will-change: transform;
   backface-visibility: hidden;
-  border-radius: 10px 0 0 10px;
   z-index: 1;
 
   @media screen and (max-width: 820px) {
-    height: floor($arrow-height / 2);
+    height: floor( calc($arrow-height / 2) );
   }
 
   .dark-mode & {
@@ -91,7 +90,9 @@
 .digit-7-clock-2,
 .digit-7-clock-4 {
   .arrow {
-    opacity: 0;
+    &.arrow-1, &.arrow-2 {
+      transform: translateX(-50%) rotate(310deg);
+    }
   }
   &::after {
     .dark-mode & {

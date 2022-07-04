@@ -228,16 +228,14 @@ body {
 .clock-wrap {
   display: flex;
   padding: $container-padding;
-  background: $white-bg;
-  box-shadow: -1px 4px 20px 2px rgba(0, 0, 0, 0.05);
   border-radius: 10px;
   margin-left: -#{$digit-group-indent};
   margin-right: -#{$digit-group-indent};
 
   @media screen and (max-width: 820px) {
-    padding: $container-padding / 2;
-	margin-left: -#{$digit-group-indent / 2};
-    margin-right: -#{$digit-group-indent / 2};
+    padding: calc($container-padding / 2);
+	  margin-left: - calc($digit-group-indent / 2);
+    margin-right: - calc($digit-group-indent / 2);
   }
 
   .dark-mode & {
@@ -251,8 +249,8 @@ body {
     margin-right: $digit-group-indent;
 
 	@media screen and (max-width: 820px) {
-		margin-left: $digit-group-indent / 2;
-        margin-right: $digit-group-indent / 2;
+		margin-left: calc($digit-group-indent / 2);
+    margin-right: calc($digit-group-indent / 2);
 	}
   }
 }

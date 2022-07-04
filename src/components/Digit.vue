@@ -36,7 +36,7 @@ export default {
   width: ($clock-size * 2) + ($clock-margin * 4);
 
   @media screen and (max-width: 820px) {
-      width: (($clock-size / 2) * 2) + (($clock-margin / 2) * 4);
+      width: ( calc($clock-size / 2) * 2 ) + ( calc($clock-margin / 2) * 4 );
   }
 }
 </style>
